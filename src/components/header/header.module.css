@@ -1,0 +1,39 @@
+.header {
+    background-color: var(--color-primary);
+    padding: 1em 2em;
+    margin-bottom: 1rem;
+}
+
+.wrapper {
+    max-width: 1600px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.branding {
+    font-family: 'Arial', sans-serif;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .navlinks ul{
+        gap: 1.2em;
+    }
+}
