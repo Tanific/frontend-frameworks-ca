@@ -1,6 +1,6 @@
 import styles from './product-card.module.css';
 
-const ProductCard = ({ id, title, imageUrl, description, price, discountedPrice }) => {
+const ProductCard = ({ title, imageUrl, description, price, discountedPrice }) => {
     const isDiscounted = price > discountedPrice;
     const discount = Math.round(((price - discountedPrice) / price) * 100);
 
@@ -10,10 +10,10 @@ const ProductCard = ({ id, title, imageUrl, description, price, discountedPrice 
             <div className={styles.body}>
                 <h3 className={styles.title}>{title}</h3>
                 <p className={styles.description}>{description}</p>
-                <p className={styles.price}>Price: ${price}</p>
+                <p className={styles.price}>Price: kr {price}</p>
                 {isDiscounted && (
                     <p className={styles.discountedPrice}>
-                        Discounted Price: ${discountedPrice} (Save {discount}%)
+                        Discounted Price: kr {discountedPrice} (Save {discount}%)
                     </p>
                 )}
             </div>

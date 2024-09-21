@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { getProducts } from "../api/getProducts";
+import { Link } from "react-router-dom";
 import ProductCard from "../components/product-card/product-card";
 import Layout from "../components/layout/layout";
 
-function Homepage() {
+import styles from './homePage.module.css';
+
+const Homepage = () => {
     const [data, setData] = useState([]);
 
     const fetchProducts = async () => {
@@ -20,24 +23,27 @@ function Homepage() {
 
     return (
         <Layout>
-            <ul>
+            <div className={styles.products}>
+              <ul>
                 {data.length > 0 ? (
                     data.map((product) => (
-                        <ProductCard 
-                            key={product.id} 
-                            id={product.id}
-                            title={product.title}
-                            imageUrl={product.image.url}
-                            description={product.description}
-                            price={product.price}
-                            discountedPrice={product.discountedPrice}
-                        />
+                        <Link key={product.id} to={`/product/${product.id}`}>
+                                <ProductCard 
+                                    id={product.id}
+                                    title={product.title}
+                                    imageUrl={product.image.url}
+                                    description={product.description}
+                                    price={product.price}
+                                    discountedPrice={product.discountedPrice}
+                                />
+                        </Link>
                     ))
                 ) : (
-                    <p>Loading products...</p>
+                <p>Loading products...</p>
                 )}
-                </ul>
-            </Layout>
+              </ul>
+            </div>
+        </Layout>
     );
 }
 

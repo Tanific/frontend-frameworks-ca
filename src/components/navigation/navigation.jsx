@@ -5,12 +5,10 @@ const Navigation = ({ items }) => {
     return (
         <nav className={styles.navigation} aria-label="Main navigation">
             <ul>
-                {items.map((item, index) => (
-                    <li key={index}>
-                        <a href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} className={styles.navLink}>
-                            {item}
-                        </a>
-                    </li>
+                {items.map((item) => (
+                    <ul className={styles.navLink}>
+                    {item}
+                    </ul>
                 ))}
                 <li>
                     <CartIcon />

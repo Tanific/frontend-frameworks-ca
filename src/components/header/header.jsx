@@ -1,7 +1,7 @@
 import styles from './header.module.css';
 import Navigation from '../navigation/navigation';
 
-const navItems = ["Products", "Contact"];
+const navItems = ["Products", "Contact", "Cart"];
 
 const Header = () => {
     return (

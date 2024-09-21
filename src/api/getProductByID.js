@@ -1,6 +1,6 @@
 import { BASE_URL } from '.';
 
-export async function getProductById(id) {
+export async function getProductByID(id) {
     try {
         const response = await fetch(`${BASE_URL}/${id}`, {
             method: 'GET',

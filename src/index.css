@@ -3,9 +3,7 @@
     --ff-body: 'Open Sans', sans-serif;
     --color-primary: hsla(335, 100%, 75%, 0.753);
     --color-secondary: hsl(286, 100%, 94%);
-
     --header-width: 1400px;
-    --content-width: 1200px;
 }
 
 #root {
