@@ -6,22 +6,17 @@
     list-style-type: none;
     gap: 2rem;
     padding: 0;
-    margin: 0 6rem 0 0;
+    margin: 0 1rem 0 0;
 }
 
-.navigation li {
+.navigation li a {
     list-style: none;
-}
-
-.navLink {
-    text-decoration: none;
     color: #333;
-    font-weight: bold;
 }
 
 @media (max-width: 600px) {
     .navigation ul {
-        gap: 1.5em;
+        gap: 2em;
         margin: 0.4em;
     }
 }

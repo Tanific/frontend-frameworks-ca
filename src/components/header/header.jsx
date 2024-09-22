@@ -1,21 +1,15 @@
-import styles from './header.module.css';
-import Navigation from '../navigation/navigation';
-
-const navItems = ["Products", "Contact", "Cart"];
+import styles from './header.module.css'
+import Navigation from '../navigation/navigation'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.wrapper}>
-
                 <div className={styles.branding}>
-                    <h1 className={styles.logo}>eCom</h1>
+                    <Link to={'/'}> <h1 className={styles.logo}>eCom</h1></Link>
                 </div>
-
-                <div className={styles.navlinks}>
-                    <Navigation items={navItems} />
-                </div>
-
+                <Navigation/>
             </div>
         </header>
     );

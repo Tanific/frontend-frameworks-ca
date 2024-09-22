@@ -1,11 +1,10 @@
 .header {
     background-color: var(--color-primary);
     padding: 1em 2em;
-    margin-bottom: 1rem;
 }
 
 .wrapper {
-    max-width: 1600px;
+    max-width: 1400px;
     margin-inline: auto;
     display: flex;
     align-items: center;

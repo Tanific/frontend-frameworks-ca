@@ -1,19 +1,21 @@
 import styles from './navigation.module.css';
 import CartIcon from '../cart-icon/cart-icon';
+import { Link } from 'react-router-dom';
 
-const Navigation = ({ items }) => {
+const Navigation = () => {
     return (
         <nav className={styles.navigation} aria-label="Main navigation">
-            <ul>
-                {items.map((item) => (
-                    <ul className={styles.navLink}>
-                    {item}
-                    </ul>
-                ))}
-                <li>
-                    <CartIcon />
-                </li>
-            </ul>
+                <ul className={styles.navlinks}>
+                    <li>
+                        <Link to ={'/'}>Products</Link>
+                    </li>
+                    <li>
+                        <Link to ={'/contact'}>Contact</Link>
+                    </li>
+                    <li>
+                        <CartIcon/>
+                    </li>
+                </ul>
         </nav>
     );
 };
