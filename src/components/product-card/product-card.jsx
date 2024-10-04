@@ -10,12 +10,14 @@ const ProductCard = ({ title, imageUrl, description, price, discountedPrice }) =
             <div className={styles.body}>
                 <h3 className={styles.title}>{title}</h3>
                 <p className={styles.description}>{description}</p>
-                <p className={styles.price}>Price: kr {price}</p>
                 {isDiscounted && (
                     <p className={styles.discountedPrice}>
                         Discounted Price: kr {discountedPrice} (Save {discount}%)
                     </p>
                 )}
+            
+                <p className={styles.price}>Price: kr {price}</p>
+                
             </div>
         </li>
     );

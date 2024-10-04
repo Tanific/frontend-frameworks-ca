@@ -3,6 +3,7 @@ import { getProducts } from "../api/getProducts";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/product-card/product-card";
 import Layout from "../components/layout/layout";
+import LoadingSpinner from "../components/spinner/spinner";
 
 import styles from './homePage.module.css';
 
@@ -39,7 +40,7 @@ const Homepage = () => {
                         </Link>
                     ))
                 ) : (
-                <p>Loading products...</p>
+                <LoadingSpinner />
                 )}
               </ul>
             </div>

@@ -13,7 +13,7 @@ const Navigation = () => {
                         <Link to ={'/contact'}>Contact</Link>
                     </li>
                     <li>
-                        <CartIcon/>
+                        <Link to ={'/cart'}><CartIcon/></Link>
                     </li>
                 </ul>
         </nav>
