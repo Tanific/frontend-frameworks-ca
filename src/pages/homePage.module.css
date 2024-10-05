@@ -1,13 +1,13 @@
 .products ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    padding-inline: 0;
-    gap: 0.2rem;
-    margin-block-start: 0.3rem;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  padding-inline: 0;
+  gap: 0.2rem;
+  margin-block-start: 0.3rem;
+  justify-items: center;
 }
 
 .products {
-    max-width: 1200px;
-    margin-inline: auto;
+  max-width: 1200px;
+  margin-inline: auto;
 }

@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { getProductByID } from '../api/getProductByID';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getProductByID } from "../api/getProductByID";
 import Layout from "../components/layout/layout";
 import LoadingSpinner from '../components/spinner/spinner';
 
-import styles from './productPage.module.css'
+import styles from "./productPage.module.css";
 
 const Productpage = () => {
-    const { id } = useParams();
-    const [data, setData] = useState(null);
+  const { id } = useParams();
+  const [data, setData] = useState(null);
 
     useEffect(() => {
         const getData = async () => {
@@ -19,8 +19,8 @@ const Productpage = () => {
             console.log(product);
         };
 
-        getData();
-    }, [id]); 
+    getData();
+  }, [id]);
 
     return (
         <Layout>

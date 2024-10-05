@@ -1,22 +1,22 @@
 .navigation ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    list-style-type: none;
-    gap: 2rem;
-    padding: 0;
-    margin: 0 1rem 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  list-style-type: none;
+  gap: 2rem;
+  padding: 0;
+  margin: 0 1rem 0 0;
 }
 
 .navigation li a {
-    list-style: none;
-    color: #333;
+  list-style: none;
+  color: #333;
 }
 
 @media (max-width: 600px) {
-    .navigation ul {
-        gap: 2em;
-        margin: 0.4em;
-    }
+  .navigation ul {
+    gap: 2em;
+    margin: 0.4em;
+  }
 }

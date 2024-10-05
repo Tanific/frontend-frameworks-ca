@@ -1,37 +1,35 @@
 :root {
-    --ff-heading: 'Montserrat', sans-serif;
-    --ff-body: 'Open Sans', sans-serif;
-    --color-primary: hsla(335, 100%, 75%, 0.753);
-    --color-secondary: hsl(286, 100%, 94%);
-    --header-width: 1400px;
+  --ff-heading: "Montserrat", sans-serif;
+  --ff-body: "Open Sans", sans-serif;
+  --color-primary: hsla(335, 100%, 75%, 0.753);
+  --color-secondary: hsl(286, 100%, 94%);
+  --header-width: 1400px;
 }
 
 #root {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-
 body {
-    margin: 0;
-    font-family: var(--ff-body);
+  margin: 0;
+  font-family: var(--ff-body);
 }
 
 a {
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 a:hover,
 a:focus {
-    color: var(--color-secondary);
+  color: var(--color-secondary);
 }
-

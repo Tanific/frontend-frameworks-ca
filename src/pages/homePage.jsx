@@ -5,47 +5,47 @@ import ProductCard from "../components/product-card/product-card";
 import Layout from "../components/layout/layout";
 import LoadingSpinner from "../components/spinner/spinner";
 
-import styles from './homePage.module.css';
+import styles from "./homePage.module.css";
 
 const Homepage = () => {
-    const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
-    const fetchProducts = async () => {
-        const response = await getProducts();
-        const products = response.data; 
-        setData(products);
-        
-        console.log(products);
-    };
+  const fetchProducts = async () => {
+    const response = await getProducts();
+    const products = response.data;
+    setData(products);
 
-    useEffect(() => {
-        fetchProducts(); 
-    }, []);
+    console.log(products);
+  };
 
-    return (
-        <Layout>
-            <div className={styles.products}>
-              <ul>
-                {data.length > 0 ? (
-                    data.map((product) => (
-                        <Link key={product.id} to={`/product/${product.id}`}>
-                                <ProductCard 
-                                    id={product.id}
-                                    title={product.title}
-                                    imageUrl={product.image.url}
-                                    description={product.description}
-                                    price={product.price}
-                                    discountedPrice={product.discountedPrice}
-                                />
-                        </Link>
-                    ))
-                ) : (
-                <LoadingSpinner />
-                )}
-              </ul>
-            </div>
-        </Layout>
-    );
-}
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  return (
+    <Layout>
+      <div className={styles.products}>
+        <ul>
+          {data.length > 0 ? (
+            data.map((product) => (
+              <Link key={product.id} to={`/product/${product.id}`}>
+                <ProductCard
+                  id={product.id}
+                  title={product.title}
+                  imageUrl={product.image.url}
+                  description={product.description}
+                  price={product.price}
+                  discountedPrice={product.discountedPrice}
+                />
+              </Link>
+            ))
+          ) : (
+            <LoadingSpinner />
+          )}
+        </ul>
+      </div>
+    </Layout>
+  );
+};
 
 export default Homepage;

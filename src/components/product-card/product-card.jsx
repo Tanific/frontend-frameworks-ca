@@ -1,8 +1,14 @@
-import styles from './product-card.module.css';
+import styles from "./product-card.module.css";
 
-const ProductCard = ({ title, imageUrl, description, price, discountedPrice }) => {
-    const isDiscounted = price > discountedPrice;
-    const discount = Math.round(((price - discountedPrice) / price) * 100);
+const ProductCard = ({
+  title,
+  imageUrl,
+  description,
+  price,
+  discountedPrice,
+}) => {
+  const isDiscounted = price > discountedPrice;
+  const discount = Math.round(((price - discountedPrice) / price) * 100);
 
     return (
         <li className={styles.card}>

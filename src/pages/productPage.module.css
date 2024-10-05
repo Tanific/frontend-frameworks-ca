@@ -1,56 +1,56 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    max-width: 450px;
-    margin: 50px auto;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  max-width: 450px;
+  margin: 50px auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .contentContainer {
-    max-width: 400px;
+  max-width: 400px;
 }
 
 .imageContainer {
-    max-width: 300px;
-    max-height: 300px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    background-color: #e0e0e0; 
+  max-width: 300px;
+  max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #e0e0e0;
 }
 
 img {
-    width: 100%;
-    object-fit: contain;
+  width: 100%;
+  object-fit: contain;
 }
 
 h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #333;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
 }
 
 p {
-    max-width: 300px;
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: #555;
+  max-width: 300px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
 }
 
 .price {
-    font-weight: bold;
-    font-size: 1.7em;
+  font-weight: bold;
+  font-size: 1.7em;
 }
 
 .discountedPrice {
-    font-size: 1.25em;
-    font-weight: bold;
-    color: #e67e22;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #e67e22;
 }

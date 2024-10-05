@@ -1,6 +1,6 @@
-import styles from './navigation.module.css';
-import CartIcon from '../cart-icon/cart-icon';
-import { Link } from 'react-router-dom';
+import styles from "./navigation.module.css";
+import CartIcon from "../cart-icon/cart-icon";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
     return (

@@ -1,11 +1,7 @@
 import Layout from "../components/layout/layout";
 
 const Contactpage = () => {
-    return (
-        <Layout>
-            
-        </Layout>
-    )
-}
+  return <Layout></Layout>;
+};
 
 export default Contactpage;
