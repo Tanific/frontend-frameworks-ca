@@ -1,8 +1,8 @@
 :root {
   --ff-heading: "Montserrat", sans-serif;
   --ff-body: "Open Sans", sans-serif;
-  --color-primary: hsla(335, 100%, 75%, 0.753);
-  --color-secondary: hsl(286, 100%, 94%);
+  --color-primary: rgb(255, 128, 181);
+  --color-secondary: rgb(248, 224, 255);
   --header-width: 1400px;
 }
 

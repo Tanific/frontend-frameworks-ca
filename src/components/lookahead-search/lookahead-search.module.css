@@ -1,0 +1,33 @@
+.lookaheadSearch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1em;
+  gap: 10px;
+  max-width: 375px;
+}
+
+.inputContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lookaheadSearch input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+}
