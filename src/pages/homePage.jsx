@@ -12,6 +12,7 @@ const Homepage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(8);
 
   const fetchProducts = async () => {
     try {
@@ -38,6 +39,10 @@ const Homepage = () => {
     setFilteredProducts(filtered);
   }, [searchTerm, data]);
 
+  const handleShowMore = () => {
+    setVisibleCount((prevCount) => prevCount + 8);
+  };
+
   return (
     <Layout>
       <div className={styles.products}>
@@ -57,9 +62,9 @@ const Homepage = () => {
           {loading ? (
             <LoadingSpinner />
           ) : (
-            <ul>
-              {filteredProducts.length > 0 ? (
-                filteredProducts.map((product) => (
+            <>
+              <ul>
+                {filteredProducts.slice(0, visibleCount).map((product) => (
                   <ProductCard
                     key={product.id}
                     id={product.id}
@@ -69,11 +74,17 @@ const Homepage = () => {
                     price={product.price}
                     discountedPrice={product.discountedPrice}
                   />
-                ))
-              ) : (
-                <p>No products found</p>
+                ))}
+              </ul>
+              {visibleCount < filteredProducts.length && (
+                <button
+                  className={styles.showMoreButton}
+                  onClick={handleShowMore}
+                >
+                  Show More
+                </button>
               )}
-            </ul>
+            </>
           )}
         </div>
       </div>

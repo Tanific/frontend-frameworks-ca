@@ -1,5 +1,4 @@
 import styles from "./product-card.module.css";
-import { Link } from "react-router-dom";
 
 const ProductCard = ({
   id,
@@ -9,27 +8,44 @@ const ProductCard = ({
   price,
   discountedPrice,
 }) => {
-  const isDiscounted = price > discountedPrice;
-  const discount = Math.round(((price - discountedPrice) / price) * 100);
+  const isDiscounted = discountedPrice && discountedPrice < price;
+  const discountPercentage = isDiscounted
+    ? Math.round(((price - discountedPrice) / price) * 100)
+    : 0;
 
   return (
-    <li className={styles.card}>
-      <Link to={`/product/${id}`} className={styles.link}>
-        <img className={styles.image} src={imageUrl} alt={title} />
-        <div className={styles.body}>
-          <h3 className={styles.title}>{title}</h3>
-          <p className={styles.description}>{description}</p>
-        </div>
-        <div className={styles.footer}>
+    <div className={styles.card}>
+      <a href={`/product/${id}`}>
+        <div className={styles.imageContainer}>
           {isDiscounted && (
-            <p className={styles.discountedPrice}>
-              Discounted Price: kr {discountedPrice} (Save {discount}%)
-            </p>
+            <div className={styles.discountCircle}>
+              -{discountPercentage}%
+            </div>
           )}
-          <p className={styles.price}>Price: kr {price}</p>
+          <div className={styles.image}>
+            <img src={imageUrl} alt={title} />
+          </div>
         </div>
-      </Link>
-    </li>
+        <div className={styles.body}>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.description}>{description}</p>
+          <div className={styles.footer}>
+            {isDiscounted && (
+              <span className={styles.discountedPrice}>
+                kr{discountedPrice}
+              </span>
+            )}
+            <span
+              className={`${styles.price} ${
+                isDiscounted ? styles.originalPrice : ""
+              }`}
+            >
+              kr{price}
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
   );
 };
 

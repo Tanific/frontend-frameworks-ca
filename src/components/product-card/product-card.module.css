@@ -1,67 +1,98 @@
 .card {
-  list-style: none;
-  border-radius: 8px;
-  overflow: hidden;
   background-color: #fff;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  height: 100%;
+  overflow: hidden;
+  transition: transform 0.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .card a {
+  text-decoration: none;
+  color: inherit;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+}
+
+.imageContainer {
+  position: relative;
 }
 
 .image {
-  display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
+.discountCircle {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  padding: 13px;
+  font-size: 1em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .body {
-  padding: 0.75em;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .title {
-  margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.description {
+  font-size: 1em;
+  margin-bottom: 15px;
+  color: #666;
+  flex-grow: 1;
+}
+
+.footer {
+  padding-top: 1.2em;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.price {
+  font-size: 1.6em;
   font-weight: bold;
   color: #333;
 }
 
-.footer {
-  padding: 0 1rem;
-  margin-block-start: auto;
-}
-
-.description {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.price {
-  font-size: 1rem;
-  color: #000;
-  font-weight: bold;
-  margin-block-start: auto;
-  text-align: right;
+.originalPrice {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1.2em;
 }
 
 .discountedPrice {
-  font-size: 0.9rem;
-  color: #e74c3c;
-  font-weight: bold;
-}
-
-.discountedPrice span {
-  font-weight: normal;
-  color: #777;
+  font-size: 1.6em;
+  color: var(--color-primary);
 }
