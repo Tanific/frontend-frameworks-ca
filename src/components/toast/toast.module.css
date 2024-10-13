@@ -1,6 +1,6 @@
 .toast {
     position: fixed;
-    top: -50px; /* Start position above the viewport */
+    top: -50px;
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
