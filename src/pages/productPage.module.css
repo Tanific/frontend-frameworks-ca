@@ -5,7 +5,7 @@
   padding: 10px 50px 50px 50px;
   max-width: 900px;
   margin: 30px auto;
-  background-color: #f9f9f9;
+  background-color: var(--color-base);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -23,12 +23,17 @@
   padding: 10px 20px;
   font-size: 1em;
   background-color: var(--color-secondary);
-  color: black;
+  color: var(--color-text);
   border: none;
   border-radius: 5px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+}
+
+.goBackButton:hover {
+  color: black;
+  background-color: var(--color-hover);
 }
 
 .contentContainer {
@@ -47,7 +52,7 @@
   align-items: center;
   margin-bottom: 20px;
   border-radius: 8px;
-  background-color: #e0e0e0;
+  background-color: var(--color-base);
 }
 
 .image {
@@ -58,26 +63,27 @@
 .title {
   font-size: 2rem;
   margin-bottom: 15px;
-  color: #333;
+  color: var(--color-text);
 }
 
 .description {
   max-width: 300px;
   font-size: 1rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #555;
+  text-align: center;
 }
 
 .priceContainer {
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 10px;
 }
 
 .price {
   font-weight: bold;
   font-size: 1.7em;
-  color: #333;
 }
 
 .originalPrice {
@@ -99,8 +105,23 @@
 }
 
 .quantityContainer button {
-  padding: 5px 10px;
+  width: 45px; 
+  height: 45px;
   font-size: 1rem;
+  background-color: var(--color-detail);
+  border: 1px solid white;
+  border-radius: 20%;
+  color: white;
+  font-weight: 600;
+}
+
+.quantityContainer button:hover {
+  cursor: pointer;
+  }
+
+.quantityContainer button:active {
+  background-color: var(--color-hover);
+  color: white;
 }
 
 .quantityContainer span {
@@ -111,7 +132,7 @@
 .addToCartButton {
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #007bff;
+  background-color: var(--color-button);
   color: white;
   border: none;
   border-radius: 5px;
@@ -119,7 +140,8 @@
 }
 
 .addToCartButton:hover {
-  background-color: #0056b3;
+  background-color: var(--color-hover);
+  color: black;
 }
 
 .tagsContainer {
@@ -131,7 +153,7 @@
 
 .tag {
   background-color: var(--color-secondary);
-  color: #333;
+  color: var(--color-text);
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.9rem;
@@ -146,7 +168,7 @@
 .reviewsTitle {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #333;
+  color: var(--color-text);
 }
 
 .reviewsList {
@@ -159,25 +181,12 @@
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 10px;
-}
-
-.reviewStars {
-  margin-bottom: 5px;
-}
-
-.starFilled {
-  color: var(--color-primary);
-  font-size: 1.2rem;
-}
-
-.starEmpty {
-  color: #ddd;
-  font-size: 1.2rem;
+  border: 2px solid white
 }
 
 .reviewText {
   font-size: 1rem;
-  color: #555;
+  color: var(--color-text);
 }
 
 .reviewAuthor {
@@ -192,7 +201,6 @@
   text-align: left;
 }
 
-/* Media query for wider screens */
 @media (min-width: 768px) {
   .containerWithReviews {
     flex-direction: row;
@@ -210,14 +218,11 @@
   }
 }
 
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   .containerWithReviews {
     max-width: 450px;
   }
-}
 
-@media (max-width: 768px) {
   .goBackButtonContainer {
     max-width: 450px;
   }

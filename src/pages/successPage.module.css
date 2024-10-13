@@ -16,8 +16,15 @@
   .backToStoreLink {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: var(--color-button);
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: 200;
+
   }
+
+  .backToStoreLink:hover {
+    background-color: var(--color-hover);
+  }
+  

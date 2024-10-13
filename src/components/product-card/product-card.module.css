@@ -1,7 +1,7 @@
 .card {
-  background-color: #fff;
+  background-color: var(--color-base);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--color-shadow);
   overflow: hidden;
   transition: transform 0.2s;
   position: relative;
@@ -40,16 +40,18 @@
 .discountCircle {
   position: absolute;
   top: 15px;
-  left: 15px;
+  left: 200px;
   background-color: var(--color-primary);
-  color: white;
+  color: var(--color-base);
   border-radius: 50%;
-  padding: 13px;
+  padding: 15px 10px;
   font-size: 1em;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid var(--color-base);
+  rotate: 10deg;
 }
 
 .body {
@@ -62,7 +64,7 @@
 .title {
   font-size: 1.5em;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--color-text);
 }
 
 .description {
@@ -82,8 +84,8 @@
 
 .price {
   font-size: 1.6em;
-  font-weight: bold;
-  color: #333;
+  font-weight: 400;
+  color: var(--color-text);
 }
 
 .originalPrice {
@@ -93,6 +95,7 @@
 }
 
 .discountedPrice {
-  font-size: 1.6em;
+  font-size: 1.5em;
+  font-weight: 600;
   color: var(--color-primary);
 }

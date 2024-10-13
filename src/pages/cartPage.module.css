@@ -1,41 +1,158 @@
 .cartContainer {
-    padding: 20px;
-  }
-  
-  .cartList {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .cartItem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .cartItemImage {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 20px;
-  }
-  
-  .cartItemDetails {
-    flex: 1;
-  }
-  
-  .cartTotal {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .checkoutButton {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 50px 50px 50px;
+  max-width: 900px;
+  margin: 50px auto;
+  background-color: var(--color-base);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.itemTitle {
+  margin-top: 0;
+}
+
+.cartList {
+  list-style: none;
+  padding: 0;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid var(--color-secondary);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cartItemImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.cartItemDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price {
+  font-weight: bolder;
+  font-size: 1.3em;
+}
+
+.originalPrice {
+  font-size: 1em;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.cartTotal {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.checkoutButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-button);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 200;
+}
+
+.checkoutButton:hover {
+  background-color: var(--color-hover);
+}
+
+.goBackButtonContainer {
+  max-width: 900px;
+  display: flex;
+  margin: 10px auto;
+  margin-top: 30px;
+}
+
+.goBackButton {
+  display: inline-block;
+  font-weight: 400;
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.goBackButton:hover {
+  color: black;
+  background-color: var(--color-hover);
+}
+
+.quantityContainer {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0 0;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.quantityContainer button {
+  width: 35px; 
+  height: 35px;
+  font-size: 1rem;
+  background-color: var(--color-detail);
+  border: 1px solid white;
+  border-radius: 20%;
+  color: white;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.quantityContainer button:hover {
+  cursor: pointer;
+}
+
+.quantityContainer button:active {
+  background-color: var(--color-hover);
+  color: white;
+}
+
+.quantityContainer span {
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+.removeButton {
+  background-color: var(--color-secondary);
+  border: none;
+  border-radius: 5px;
+  color: black;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  max-width: 127px;
+}
+
+.removeButton:hover {
+  background-color: var(--color-hover);
+  cursor: pointer;
+}

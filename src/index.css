@@ -1,8 +1,15 @@
 :root {
   --ff-heading: "Montserrat", sans-serif;
   --ff-body: "Open Sans", sans-serif;
-  --color-primary: rgb(255, 128, 181);
-  --color-secondary: rgb(248, 224, 255);
+  --color-primary: #ff80b5;
+  --color-secondary: #FFCCE1;
+  --color-button: #553643;
+  --color-hover: #AA8E99;
+  --color-detail: #D58EAB;
+  --color-base: #f2f2f2;
+  --color-outline: #ccc;
+  --color-text: #333;
+  --color-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   --header-width: 1400px;
 }
 
@@ -26,10 +33,4 @@ body {
 a {
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-a:hover,
-a:focus {
-  color: var(--color-secondary);
 }

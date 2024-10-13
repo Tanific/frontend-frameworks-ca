@@ -14,11 +14,11 @@
 
 .products h1 {
   font-size: 2.2em;
-  color: #333;
+  color: var(--color-text);
 }
 
 .intro {
-  color: #333;
+  color: var(--color-text);
   font-size: 1.1em;
 }
 
@@ -28,13 +28,15 @@
   margin-block-start: 2em;
   gap: 1.2em;
   grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  
 }
 
 .productContainer {
-  background-color: #f2f2f2;
+  background-color: var(--color-base);
   padding: 10px 30px;
   border-radius: 10px;
   margin-bottom: 3em;
+  box-shadow: var(--color-shadow);
 }
 
 .showMoreButton {
@@ -42,13 +44,14 @@
   margin: 2em auto;
   padding: 10px 20px;
   font-size: 1em;
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--color-button);
+  color: var(--color-base);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .showMoreButton:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-hover);
+  color: black;
 }

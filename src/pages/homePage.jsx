@@ -50,7 +50,7 @@ const Homepage = () => {
           <h1>Welcome to eCom store</h1>
           <p className={styles.intro}>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores
-            natus, dolor error minus ipsa velit?
+            natus, dolor error minus ipsa velit
           </p>
         </hgroup>
         <div className={styles.productContainer}>
@@ -63,26 +63,32 @@ const Homepage = () => {
             <LoadingSpinner />
           ) : (
             <>
-              <ul>
-                {filteredProducts.slice(0, visibleCount).map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    id={product.id}
-                    title={product.title}
-                    imageUrl={product.image?.url}
-                    description={product.description}
-                    price={product.price}
-                    discountedPrice={product.discountedPrice}
-                  />
-                ))}
-              </ul>
-              {visibleCount < filteredProducts.length && (
-                <button
-                  className={styles.showMoreButton}
-                  onClick={handleShowMore}
-                >
-                  Show More
-                </button>
+              {filteredProducts.length === 0 ? (
+                <p className={styles.noProductsFound}>No products found</p>
+              ) : (
+                <>
+                  <ul>
+                    {filteredProducts.slice(0, visibleCount).map((product) => (
+                      <ProductCard
+                        key={product.id}
+                        id={product.id}
+                        title={product.title}
+                        imageUrl={product.image?.url}
+                        description={product.description}
+                        price={product.price}
+                        discountedPrice={product.discountedPrice}
+                      />
+                    ))}
+                  </ul>
+                  {visibleCount < filteredProducts.length && (
+                    <button
+                      className={styles.showMoreButton}
+                      onClick={handleShowMore}
+                    >
+                      Show More
+                    </button>
+                  )}
+                </>
               )}
             </>
           )}

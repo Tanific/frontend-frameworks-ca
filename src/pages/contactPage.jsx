@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../components/layout/layout";
 import styles from "./contactPage.module.css";
+import validateForm from "../components/form/form-validation";
+import Toast from "../components/toast/toast";
 
 const Contactpage = () => {
   const [formData, setFormData] = useState({
@@ -11,31 +13,7 @@ const Contactpage = () => {
   });
 
   const [errors, setErrors] = useState({});
-
-  const validateForm = () => {
-    const newErrors = {};
-
-    if (!formData.fullName || formData.fullName.length < 3) {
-      newErrors.fullName = "Full name must be at least 3 characters long.";
-    }
-
-    if (!formData.subject || formData.subject.length < 3) {
-      newErrors.subject = "Subject must be at least 3 characters long.";
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!formData.email || !emailRegex.test(formData.email)) {
-      newErrors.email = "Email must be a valid email address.";
-    }
-
-    if (!formData.body || formData.body.length < 3) {
-      newErrors.body = "Body must be at least 3 characters long.";
-    }
-
-    setErrors(newErrors);
-
-    return Object.keys(newErrors).length === 0;
-  };
+  const [toast, setToast] = useState({ message: "", type: "", visible: false });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -47,7 +25,7 @@ const Contactpage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
+    if (validateForm(formData, setErrors)) {
       console.log("Form submitted successfully:", formData);
       setFormData({
         fullName: "",
@@ -56,7 +34,14 @@ const Contactpage = () => {
         body: "",
       });
       setErrors({});
+      setToast({ message: "Form submitted successfully!", type: "success", visible: true });
+    } else {
+      setToast({ message: "Please fill in the missing/incorrect fields", type: "error", visible: true });
     }
+  };
+
+  const handleCloseToast = () => {
+    setToast((prevToast) => ({ ...prevToast, visible: false }));
   };
 
   return (
@@ -115,6 +100,12 @@ const Contactpage = () => {
             Submit
           </button>
         </form>
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          visible={toast.visible}
+          onClose={handleCloseToast}
+        />
       </div>
     </Layout>
   );

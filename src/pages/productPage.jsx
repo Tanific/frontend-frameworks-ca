@@ -4,6 +4,8 @@ import { getProductByID } from "../api/getProductByID";
 import Layout from "../components/layout/layout";
 import LoadingSpinner from "../components/spinner/spinner";
 import { useCart } from "../components/cart/cartContext";
+import renderStars from "../components/product-card/product-reviews";
+import Toast from "../components/toast/toast";
 
 import styles from "./productPage.module.css";
 
@@ -12,6 +14,7 @@ const ProductPage = () => {
   const [data, setData] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
+  const [toast, setToast] = useState({ message: "", type: "", visible: false });
 
   useEffect(() => {
     const getData = async () => {
@@ -28,6 +31,7 @@ const ProductPage = () => {
   const handleAddToCart = () => {
     if (data) {
       addToCart(data, quantity);
+      setToast({ message: "Product added to cart!", type: "success", visible: true });
     }
   };
 
@@ -35,19 +39,8 @@ const ProductPage = () => {
     setQuantity((prevQuantity) => Math.max(1, prevQuantity + amount));
   };
 
-  const renderStars = (rating) => {
-    const stars = [];
-    for (let i = 0; i < 5; i++) {
-      stars.push(
-        <span
-          key={i}
-          className={i < rating ? styles.starFilled : styles.starEmpty}
-        >
-          &#9733;
-        </span>
-      );
-    }
-    return stars;
+  const handleCloseToast = () => {
+    setToast((prevToast) => ({ ...prevToast, visible: false }));
   };
 
   const isDiscounted = data && data.discountedPrice < data.price;
@@ -74,10 +67,10 @@ const ProductPage = () => {
               <p className={styles.description}>{data.description}</p>
               <div className={styles.priceContainer}>
                 {isDiscounted && (
-                  <span className={styles.originalPrice}>kr{data.price}</span>
+                  <span className={styles.originalPrice}>kr {data.price},-</span>
                 )}
                 <span className={styles.price}>
-                  {isDiscounted ? `kr${data.discountedPrice}` : `kr${data.price}`}
+                  {isDiscounted ? `kr ${data.discountedPrice},-` : `kr ${data.price},-`}
                 </span>
               </div>
               <div className={styles.quantityContainer}>
@@ -122,6 +115,12 @@ const ProductPage = () => {
               )}
             </div>
           </div>
+          <Toast
+            message={toast.message}
+            type={toast.type}
+            visible={toast.visible}
+            onClose={handleCloseToast}
+          />
         </>
       ) : (
         <LoadingSpinner />

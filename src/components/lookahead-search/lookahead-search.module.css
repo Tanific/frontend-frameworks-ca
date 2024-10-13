@@ -7,6 +7,10 @@
   max-width: 375px;
 }
 
+.lookaheadSearch svg {
+  fill: var(--color-detail)
+}
+
 .inputContainer {
   width: 100%;
   position: relative;
@@ -17,7 +21,7 @@
 .lookaheadSearch input {
   width: 100%;
   padding: 10px 40px 10px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-outline);
   border-radius: 4px;
   font-size: 16px;
 }

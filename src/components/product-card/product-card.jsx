@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./product-card.module.css";
 
 const ProductCard = ({
@@ -15,7 +16,7 @@ const ProductCard = ({
 
   return (
     <div className={styles.card}>
-      <a href={`/product/${id}`}>
+      <Link to={`/product/${id}`}>
         <div className={styles.imageContainer}>
           {isDiscounted && (
             <div className={styles.discountCircle}>
@@ -32,7 +33,7 @@ const ProductCard = ({
           <div className={styles.footer}>
             {isDiscounted && (
               <span className={styles.discountedPrice}>
-                kr{discountedPrice}
+                kr {discountedPrice},-
               </span>
             )}
             <span
@@ -40,11 +41,11 @@ const ProductCard = ({
                 isDiscounted ? styles.originalPrice : ""
               }`}
             >
-              kr{price}
+              kr {price},-
             </span>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };
