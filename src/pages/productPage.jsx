@@ -22,7 +22,6 @@ const ProductPage = () => {
       const response = await getProductByID(id);
       const product = response.data;
       setData(product);
-      console.log(product);
     };
 
     getData();

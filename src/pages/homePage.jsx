@@ -21,7 +21,6 @@ const Homepage = () => {
       setData(products);
       setFilteredProducts(products);
       setLoading(false);
-      console.log(products);
     } catch (error) {
       console.error("Error fetching products:", error);
       setLoading(false);

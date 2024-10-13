@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import FilterIconSVG from "../icons/filter";
 import SearchIconSVG from "../icons/search";
 
