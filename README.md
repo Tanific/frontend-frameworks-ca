@@ -21,3 +21,6 @@ You are tasked with build out the following pages for an eCom store:
 1. Clone the repository
 2. Run `npm install` to install dependencies
 3. Run `npm start` to start the development server
+
+### Deployment
+The site is hosted on Netlify, at https://fe-frameworks-stensen.netlify.app/
