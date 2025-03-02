@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div>
-        <span>&copy; 2024 Tonje Stensen</span>
+        <span>&copy; {new Date().getFullYear()} Tonje Stensen</span>
       </div>
       <div>
         <span>Front-end Frameworks CA for Noroff</span>

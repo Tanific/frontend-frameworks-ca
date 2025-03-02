@@ -3,7 +3,6 @@ import { BASE_URL } from ".";
 export async function getProductByID(id) {
   try {
     const response = await fetch(`${BASE_URL}/${id}`, {
-      method: "GET",
       headers: {
         "Content-Type": "application/json",
         accept: "application/json",
